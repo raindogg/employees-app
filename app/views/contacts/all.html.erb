@@ -1,0 +1,10 @@
+<h1>Our employees matter</h1>
+
+<% @contacts.each do |contact| %>
+
+  <h2><%= contact.first_name + " " + contact.last_name %></h2>
+  <ul>
+    <li>Email: <%= contact.email %></li>
+    <li>Phone: <%= contact.phone_number %></li>
+  </ul>
+  <% end %>
