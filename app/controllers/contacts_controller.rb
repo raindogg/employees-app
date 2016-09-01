@@ -12,10 +12,11 @@ class ContactsController < ApplicationController
   end
 
   def added
-    @first_name = params[:first]
-    @last_name = params[:last]
-    @email = params[:email]
-    @phone = params[:phone]
-    @message = "You have added " + @first_name + " " + @last_name + " to the database. This person can be reached at " + @email + " " + @phone + "."
+    @create = Contact.create(first_name: params[:first], 
+                             last_name: params[:last], 
+                             email: params[:email], 
+                             phone_number: params[:phone])
+   
+    @message = "You have added " + @create.first_name + " " + @create.last_name + " to the database."
   end
 end
