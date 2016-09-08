@@ -1,0 +1,9 @@
+<h1><%= @contact.full_name %></h1>
+
+
+<p><%= @contact.first_name %> can be reached at <%= @contact.email + " and " + @contact.japan_phone %>.</p>
+
+<p>This contact was last updated on <%= @contact.friendly_time %>.</p> 
+<%= link_to 'Home', '/contacts' %>
+<%= link_to 'Update contact info', "/contacts/#{@contact.id}/edit" %>
+<%= link_to 'Delete this employee', "/contacts/#{@contact.id}", method: :delete %>
