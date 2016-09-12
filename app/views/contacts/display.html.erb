@@ -1,0 +1,14 @@
+<h1>Matching employees:</h1>
+<% if @terms %>
+  <% @contacts.each do |contact| %>
+
+    <h2><%= link_to "#{contact.full_name}", "/contacts/#{contact.id}" %></h2>
+    <ul>
+      <li>Email: <%= contact.email %></li>
+      <li>Phone: <%= contact.japan_phone %></li>
+    </ul>
+    <% end %>
+<% else %>
+<h1>No matches.</h1>
+
+  <% end %>

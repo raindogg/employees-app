@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   patch '/contacts/:id' => 'contacts#update'
   delete '/contacts/:id' => 'contacts#destroy'
   get '/contacts/specific/:name' => 'contacts#specific'
+  post '/contacts/search/display' => 'contacts#display'
 end

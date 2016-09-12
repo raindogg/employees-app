@@ -50,4 +50,12 @@ class ContactsController < ApplicationController
       contact.full_name
     end
   end
+
+  def display
+    @terms = params[:search_term]
+    if @terms
+      search_terms = "%#{@terms}%"
+      @contacts = Contact.where('first_name ILIKE ? OR last_name ILIKE ? OR email ILIKE ? OR phone_number ILIKE ? OR middle_name ILIKE ? OR bio ILIKE ?', search_terms, search_terms, search_terms, search_terms, search_terms, search_terms)
+    end
+  end
 end
