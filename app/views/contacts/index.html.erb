@@ -1,5 +1,6 @@
-<h1>Our employees matter</h1>
+<h1>Your contacts</h1>
 
+<% if current_user %>
 <% @contacts.each do |contact| %>
 
   <h2><%= link_to "#{contact.full_name}", "/contacts/#{contact.id}" %></h2>
@@ -7,4 +8,7 @@
     <li>Email: <%= contact.email %></li>
     <li>Phone: <%= contact.japan_phone %></li>
   </ul>
+  <% end %>
+  <% else %>
+  <h2>You have not added any contacts.</h2>
   <% end %>

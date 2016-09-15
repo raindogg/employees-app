@@ -8,4 +8,11 @@ Rails.application.routes.draw do
   delete '/contacts/:id' => 'contacts#destroy'
   get '/contacts/specific/:name' => 'contacts#specific'
   post '/contacts/search/display' => 'contacts#display'
+
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
+
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
 end

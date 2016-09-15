@@ -1,6 +1,9 @@
 class ContactsController < ApplicationController
   def index
-    @contacts = Contact.all
+    if current_user
+      @contacts = Contact.where(user_id: current_user.id)
+    end
+    
   end
 
   def new
@@ -12,7 +15,8 @@ class ContactsController < ApplicationController
                               middle_name: params[:middle],
                               email: params[:email],
                               phone_number: params[:phone],
-                              bio: params[:bio])
+                              bio: params[:bio],
+                              user_id: current_user.id)
     flash[:success] = "Contact added."
     redirect_to "/contacts/#{@contact.id}"
   end

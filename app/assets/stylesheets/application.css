@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+ a.nav-link {
+   color:white; 
+ }
+
+ .form_control {
+   color: black;
+ }
+
+ .nav-item {
+  color:white;
+ }

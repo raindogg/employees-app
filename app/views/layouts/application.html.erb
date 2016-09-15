@@ -17,6 +17,19 @@
       <li class="nav-item">
         <a class="nav-link" href="/contacts/new">Add a contact</a>
       </li>
+      <% if current_user %>
+        <li class="nav-item">
+          <%= link_to 'Log out', '/logout', method: :delete, class: "nav-item" %>
+        </li>
+        <li><a class="nav-item">Hello <%= current_user.name %></a></li>
+      <% else %>
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/signup">Sign up</a>
+      </li>
+      <% end %>
       </ul>
       <%= form_tag '/contacts/search/display', method: :post, class: 'navbar-form navbar-right' do %>
         <div class="form-group">
